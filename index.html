@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO dasar: judul & deskripsi jelas menyebutkan layanan utama,
+       supaya mesin pencari tahu persis toko ini jual apa. -->
+  <title>SaldoKu — Top Up DANA, Pulsa, Token Listrik & Transfer Bank</title>
+  <meta name="description" content="Beli dan tarik saldo DANA, pulsa, token listrik, serta transfer bank dengan cepat dan biaya admin transparan. Buka setiap hari 05.00–21.00 WIB.">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/home.css">
+
+  <!-- Lucide Icons — dimuat via CDN. Ini icon set outline & minimal
+       sesuai brand guideline (bukan icon solid/filled). -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">Saldo<span class="logo__accent">Ku</span></a>
+      <nav class="header__nav">
+        <a href="#layanan">Layanan</a>
+        <a href="#cara-kerja">Cara Kerja</a>
+        <a href="pages/cek-status.html">Cek Status</a>
+        <a href="#" class="btn btn-primary header__cta">Mulai Transaksi</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================
+         HERO
+         Tesis halaman: kecepatan + transparansi biaya admin.
+         ========================================================== -->
+    <section class="hero container">
+      <div class="hero__eyebrow">
+        <span class="dot"></span>
+        Buka sekarang · 05.00–21.00 WIB
+      </div>
+
+      <h1 class="hero__title">
+        Isi saldo, tanpa <span class="highlight">basa-basi.</span>
+      </h1>
+
+      <p class="hero__subtitle">
+        DANA, pulsa, token listrik, dan transfer bank — satu tempat,
+        biaya admin jelas di depan, tanpa syarat berbelit.
+      </p>
+
+      <div class="hero__actions">
+        <a href="#layanan" class="btn btn-primary">Pilih Layanan</a>
+        <a href="pages/cek-status.html" class="btn btn-ghost">Cek Status Pesanan</a>
+      </div>
+
+      <div class="info-strip">
+        <div class="info-strip__item">
+          <svg data-lucide="clock" width="18" height="18"></svg>
+          <div>
+            <div class="info-strip__label">Jam Operasional</div>
+            <div class="info-strip__value">Setiap hari, 05.00–21.00 WIB</div>
+          </div>
+        </div>
+        <div class="info-strip__item">
+          <svg data-lucide="wallet" width="18" height="18"></svg>
+          <div>
+            <div class="info-strip__label">Batas Transaksi</div>
+            <div class="info-strip__value">Rp10.000 – Rp1.000.000</div>
+          </div>
+        </div>
+        <div class="info-strip__item">
+          <svg data-lucide="map-pin" width="18" height="18"></svg>
+          <div>
+            <div class="info-strip__label">COD Tersedia</div>
+            <div class="info-strip__value">Khusus area Kec. Tegalwaru</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         LAYANAN (4 produk)
+         ========================================================== -->
+    <section class="section container" id="layanan">
+      <div class="section__header">
+        <h2 class="section__title">Layanan</h2>
+        <p class="section__desc">Pilih layanan yang kamu butuhkan.</p>
+      </div>
+
+      <div class="product-grid">
+        <!-- DANA -->
+        <a href="pages/dana.html" class="card product-card">
+          <div class="product-card__icon">
+            <svg data-lucide="banknote" width="22" height="22"></svg>
+          </div>
+          <div class="product-card__title">DANA</div>
+          <p class="product-card__desc">Beli atau tarik saldo DANA, admin sesuai nominal.</p>
+          <div class="product-card__admin">Admin mulai <strong>Rp2.000</strong></div>
+        </a>
+
+        <!-- Pulsa -->
+        <a href="pages/pulsa.html" class="card product-card">
+          <div class="product-card__icon">
+            <svg data-lucide="smartphone" width="22" height="22"></svg>
+          </div>
+          <div class="product-card__title">Pulsa</div>
+          <p class="product-card__desc">Isi pulsa semua operator, admin flat untuk semua nominal.</p>
+          <div class="product-card__admin">Admin <strong>Rp3.000</strong></div>
+        </a>
+
+        <!-- Token Listrik -->
+        <a href="pages/token-listrik.html" class="card product-card">
+          <div class="product-card__icon">
+            <svg data-lucide="zap" width="22" height="22"></svg>
+          </div>
+          <div class="product-card__title">Token Listrik</div>
+          <p class="product-card__desc">Token PLN prabayar 20rb–1jt, langsung terkirim.</p>
+          <div class="product-card__admin">Admin mulai <strong>Rp2.000</strong></div>
+        </a>
+
+        <!-- Transfer Bank -->
+        <a href="pages/bank.html" class="card product-card">
+          <div class="product-card__icon">
+            <svg data-lucide="landmark" width="22" height="22"></svg>
+          </div>
+          <div class="product-card__title">Transfer Bank</div>
+          <p class="product-card__desc">Kirim atau tarik dana ke semua bank, admin flat.</p>
+          <div class="product-card__admin">Admin <strong>Rp3.000</strong></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         CARA KERJA
+         ========================================================== -->
+    <section class="section container" id="cara-kerja">
+      <div class="section__header">
+        <h2 class="section__title">Cara Kerja</h2>
+        <p class="section__desc">Empat langkah, tanpa perlu daftar akun.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step__number">01</div>
+          <div class="step__title">Pilih layanan</div>
+          <p class="step__desc">Tentukan produk dan isi data tujuan.</p>
+        </div>
+        <div class="step">
+          <div class="step__number">02</div>
+          <div class="step__title">Bayar</div>
+          <p class="step__desc">Transfer sesuai total, lalu konfirmasi.</p>
+        </div>
+        <div class="step">
+          <div class="step__number">03</div>
+          <div class="step__title">Diproses</div>
+          <p class="step__desc">Pesanan diverifikasi dan dikirim.</p>
+        </div>
+        <div class="step">
+          <div class="step__number">04</div>
+          <div class="step__title">Selesai</div>
+          <p class="step__desc">Struk dikirim ke WhatsApp kamu.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="logo" style="font-size: var(--text-base);">Saldo<span class="logo__accent">Ku</span></span>
+      <p class="footer__note">&copy; 2026 SaldoKu. Transaksi harian, cepat, dan transparan.</p>
+      <a href="#" class="footer__credit" title="Dibuat oleh Ervan Permana">
+        <svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="currentColor" stroke-width="24" fill="none" stroke-linecap="round">
+            <circle cx="210" cy="120" r="55" />
+            <circle cx="290" cy="120" r="55" />
+          </g>
+          <text x="250" y="235" fill="currentColor" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="52" font-weight="800" letter-spacing="6" text-anchor="middle">EP</text>
+        </svg>
+        <span>EP</span>
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>
