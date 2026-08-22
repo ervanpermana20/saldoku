@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cek Status Pesanan — SaldoKu</title>
+  <meta name="description" content="Cek status transaksi SaldoKu kamu menggunakan kode unik.">
+
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/form.css">
+  <link rel="stylesheet" href="../css/status.css">
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+  <script src="../js/firebase-config.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/modal.js"></script>
+  <script src="../js/cek-status.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="../index.html" class="logo">Saldo<span class="logo__accent">Ku</span></a>
+      <nav class="header__nav">
+        <a href="../index.html">Beranda</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-header">
+      <div class="breadcrumb">
+        <a href="../index.html">Beranda</a>
+        <svg data-lucide="chevron-right" width="14" height="14"></svg>
+        <span>Cek Status</span>
+      </div>
+      <h1 class="page-header__title">
+        <span class="page-header__icon">
+          <svg data-lucide="search" width="20" height="20"></svg>
+        </span>
+        Cek Status Pesanan
+      </h1>
+    </div>
+
+    <p class="text-secondary" style="margin-bottom: var(--space-3); max-width: 480px;">
+      Masukkan kode unik yang kamu dapat saat pesanan dibuat.
+    </p>
+
+    <!-- ============================================================
+         FORM PENCARIAN
+         ============================================================ -->
+    <div class="status-search">
+      <div class="status-search__row">
+        <input
+          type="text"
+          id="kodeInput"
+          placeholder="Contoh: 0007"
+          maxlength="4"
+          inputmode="numeric"
+        >
+        <button type="button" class="btn btn-primary" id="cariBtn">Cari</button>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         HASIL — disembunyikan default, diisi & ditampilkan lewat JS
+         ============================================================ -->
+    <div class="status-result hidden" id="hasilBox">
+      <div class="card">
+        <div class="status-result__header">
+          <span class="status-result__kode" id="hasilKode">0000</span>
+          <span class="badge" id="hasilBadge">Status</span>
+        </div>
+        <div class="status-result__rows">
+          <div class="status-result__row">
+            <span class="status-result__label">Produk</span>
+            <span class="status-result__value" id="hasilProduk">-</span>
+          </div>
+          <div class="status-result__row">
+            <span class="status-result__label">Jenis</span>
+            <span class="status-result__value" id="hasilJenis">-</span>
+          </div>
+          <div class="status-result__row">
+            <span class="status-result__label">Nominal</span>
+            <span class="status-result__value" id="hasilNominal">-</span>
+          </div>
+          <div class="status-result__row">
+            <span class="status-result__label">Admin</span>
+            <span class="status-result__value" id="hasilAdmin">-</span>
+          </div>
+          <div class="status-result__row">
+            <span class="status-result__label">Total</span>
+            <span class="status-result__value" id="hasilTotal">-</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pesan kalau kode tidak ditemukan -->
+    <div class="status-empty hidden" id="notFoundBox">
+      Kode tidak ditemukan. Cek kembali kode unik kamu.
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="logo" style="font-size: var(--text-base);">Saldo<span class="logo__accent">Ku</span></span>
+      <p class="footer__note">&copy; 2026 SaldoKu.</p>
+      <a href="#" class="footer__credit" title="Dibuat oleh Ervan Permana">
+        <svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="currentColor" stroke-width="24" fill="none" stroke-linecap="round">
+            <circle cx="210" cy="120" r="55" />
+            <circle cx="290" cy="120" r="55" />
+          </g>
+          <text x="250" y="235" fill="currentColor" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="52" font-weight="800" letter-spacing="6" text-anchor="middle">EP</text>
+        </svg>
+        <span>EP</span>
+      </a>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       MODAL (pengganti alert bawaan browser)
+       ============================================================ -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <div class="modal-icon" id="modalIcon"></div>
+      <h3 class="modal-judul" id="modalJudul"></h3>
+      <p class="modal-pesan" id="modalPesan"></p>
+      <div class="modal-kode hidden" id="modalKode"></div>
+      <button type="button" class="btn btn-primary btn-block" id="modalTutupBtn">Oke</button>
+    </div>
+  </div>
+
+</body>
+</html>
